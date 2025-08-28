@@ -1,0 +1,25 @@
+ h1 {
+    font-style: italic;
+    font-size: 7cap;
+    color: blue;
+   
+ }
+ p { 
+       font-size: 5cap;
+         color: white;
+         background-color: black;
+ }
+ .CSS {
+    font-size: 4.5cap;
+    font-style: italic;
+ }
+ ul>li  {
+    font-size: 3.5cap;
+ }
+ a { 
+    font-size: 3.5cap;
+    color: blueviolet;
+ }
+ input {
+    font-size: xx-large;
+ }

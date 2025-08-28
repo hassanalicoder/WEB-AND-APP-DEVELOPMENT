@@ -1,0 +1,22 @@
+h1 {
+    color: blue;
+     font-size: xx-large;
+}
+ h1~p {
+    background-color:white;
+    color: black;
+    font-size: xx-large;
+ }
+ /* ul>li {
+    background-color: black;
+    color: white;
+    font: 25px;
+ } */
+ .para {
+color: green;
+font-size:xx-large;
+ }
+ .font {
+    color: aqua;
+ font-size: xx-large;
+ }
