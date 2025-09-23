@@ -1,0 +1,117 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: rgb(222, 220, 224);
+    padding-top: 180px;
+
+}
+.container{
+    margin: 10px 20px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+.leftpart{
+    width: 40%;
+    flex-wrap:wrap
+}
+h1{
+    color: royalblue;
+    font-size: 80px;
+}
+h3{
+    color: black;
+    font-size: 30px;
+
+}
+.rightpart{
+    width: 50%;
+    display: flex;
+    align-items: center;
+    flex-direction:column;
+}
+.loginpage{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    background-color: #fff;
+    width: 450px;
+    height: 370px;
+     box-shadow: -10px -10px 15px rgba(0, 0, 0, 1);
+       border-radius: 10px;
+}
+form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items:  center;
+    padding: 15px 0px;
+}
+input{
+    height: 50px;
+    width: 180px;
+    margin: 10px 0px;
+    outline: none;
+    border: 1px solid #fff;
+    font-size: 18px;
+    border-radius: 10px;
+}
+input[type="submit"]{
+    background-color: royalblue;
+    color: white;
+}
+p{
+    color: royalblue;
+}
+hr{
+border: 1px solid #ccc;
+width: 320px;
+margin: 20px 0px;
+}
+createaccount{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-color: green;
+    width: 250px;
+    height: 50px;
+    font-weight: 30px;
+    color: white;
+    border-radius: 10px;
+}
+span{
+    margin: 10px;
+    font-size: 18px;
+    font-weight: 20px;
+}
+@media(max-width:820px){
+    html{
+        font-size: 75%;
+    }
+    .container{
+        display: flex;
+        flex-direction: column;
+    }
+    form{
+        width: 300px;
+        height: fit-content;
+    }
+    .createaccount{
+        margin-bottom: 1rem;
+        font: 1.5rem;
+    }
+    .loginpage{
+        size: 60px;
+    }
+
+}
