@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Facebook - Signup & Dashboard</title>
+  <style>
+    :root{
+      --fb-blue:#1877f2;
+      --muted:#6b7280;
+      --bg:#f0f2f5;
+      --card:#ffffff;
+      font-family: "Helvetica Neue", Arial, sans-serif;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%;margin:0;background:var(--bg);color:#111}
+    a{color:inherit;text-decoration:none}
+
+    .page{min-height:100vh;display:flex;align-items:flex-start;justify-content:center;padding:20px}
+
+    .wrap{width:1100px;max-width:100%;display:grid;grid-template-columns:1fr 420px;gap:24px}
+
+    .brand{
+      display:flex;flex-direction:column;gap:18px;padding:30px 24px;border-radius:12px;background:linear-gradient(180deg,var(--card),#f7f9fb);
+      box-shadow:0 6px 18px rgba(15,23,42,0.06);
+    }
+    .logo{display:flex;align-items:center;gap:14px}
+    .logo .mark{width:64px;height:64px;border-radius:8px;background:var(--fb-blue);display:flex;align-items:center;justify-content:center;color:white;font-weight:700;font-size:28px}
+    .logo h1{font-size:34px;margin:0;color:var(--fb-blue)}
+    .lead{color:var(--muted);font-size:16px;line-height:1.4}
+
+    .card{background:var(--card);padding:22px;border-radius:12px;box-shadow:0 8px 24px rgba(15,23,42,0.06)}
+    .signup-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+    .input{display:flex;flex-direction:column;gap:6px}
+    .input label{font-size:12px;color:var(--muted)}
+    .input input, .input select{padding:10px 12px;border-radius:8px;border:1px solid #e6e9ee;font-size:14px}
+    .full{grid-column:1 / -1}
+    .cta{display:flex;flex-direction:column;gap:10px;margin-top:8px}
+    .btn-primary{background:var(--fb-blue);color:white;padding:12px;border-radius:8px;border:0;font-weight:600;cursor:pointer}
+    .btn-ghost{background:transparent;border:1px solid #e6e9ee;padding:10px;border-radius:8px;cursor:pointer}
+    .muted{font-size:13px;color:var(--muted)}
+
+    .right-column{display:flex;flex-direction:column;gap:14px}
+    .login-short{padding:16px;border-radius:12px;background:linear-gradient(180deg,var(--card),#fbfdff);box-shadow:0 6px 18px rgba(15,23,42,0.04)}
+    .login-short input{width:100%;margin-top:8px}
+
+    .demo-link{display:inline-block;padding:10px 12px;border-radius:8px;border:1px dashed #dbe7ff;color:var(--fb-blue);font-weight:600;text-align:center;width:100%}
+
+    /* Dashboard styles */
+    .dash-wrap{width:1100px;max-width:100%;display:grid;grid-template-columns:260px 1fr 300px;gap:20px}
+    .sidebar{background:var(--card);padding:18px;border-radius:12px;position:sticky;top:20px;height:fit-content}
+    .nav-item{display:flex;align-items:center;gap:12px;padding:10px;border-radius:8px;color:#111;font-weight:600}
+    .topbar{grid-column:1/-1;background:var(--card);padding:12px;border-radius:12px;display:flex;align-items:center;justify-content:space-between;box-shadow:0 6px 18px rgba(15,23,42,0.04)}
+    .search{flex:1;margin:0 20px}
+    .search input{width:100%;padding:10px;border-radius:8px;border:1px solid #e6e9ee}
+    .profile{display:flex;align-items:center;gap:10px}
+    .avatar{width:38px;height:38px;border-radius:50%;background:linear-gradient(135deg,#f3f4f6,#e6eefc);display:flex;align-items:center;justify-content:center;font-weight:700}
+
+    .compose{background:var(--card);padding:14px;border-radius:12px}
+    .compose textarea{width:100%;min-height:80px;border-radius:10px;padding:10px;border:1px solid #e6e9ee}
+    .post{background:var(--card);padding:12px;border-radius:12px}
+
+    .rightbar{background:var(--card);padding:16px;border-radius:12px}
+    .friend{display:flex;gap:10px;align-items:center;padding:8px;border-radius:8px}
+
+    @media (max-width:980px){
+      .wrap{grid-template-columns:1fr;}
+      .right-column{order:3}
+    }
+    @media (max-width:700px){
+      .logo h1{font-size:28px}
+      .card{padding:16px}
+      .dash-wrap{grid-template-columns:1fr}
+    }
+  </style>
+</head>
+<body>
+
+  <!-- SIGNUP PAGE -->
+  <main class="page" id="signup">
+    <div class="wrap">
+      <section class="brand card">
+        <div class="logo">
+          <div class="mark">f</div>
+          <div>
+            <h1>facebook</h1>
+            <p class="muted">Connect with friends and the world around you.</p>
+          </div>
+        </div>
+        <p class="lead">See photos and updates from friends. Share what's new with your community.</p>
+      </section>
+
+      <aside class="right-column">
+        <div class="card login-short">
+          <strong>Already have an account?</strong>
+          <div style="margin-top:10px">
+            <input type="email" placeholder="Email or phone" />
+            <input type="password" placeholder="Password" style="margin-top:8px" />
+            <button class="btn-primary" style="width:100%;margin-top:10px" onclick="document.getElementById('signup').style.display='none';document.getElementById('dashboard').style.display='block';">Log In</button>
+          </div>
+        </div>
+
+        <div class="card">
+          <strong>Create a new account</strong>
+          <p class="muted">It's quick and easy.</p>
+          <div style="margin-top:12px">
+            <a href="#" class="demo-link" onclick="document.getElementById('signup').style.display='none';document.getElementById('dashboard').style.display='block';">Try demo dashboard →</a>
+          </div>
+        </div>
+      </aside>
+
+      <section class="card" aria-labelledby="signup-form">
+        <h2 id="signup-form" style="margin-top:0">Sign Up</h2>
+        <form class="signup-grid" onsubmit="document.getElementById('signup').style.display='none';document.getElementById('dashboard').style.display='block';return false;">
+          <div class="input">
+            <label>First name</label>
+            <input type="text" placeholder="First name" />
+          </div>
+          <div class="input">
+            <label>Last name</label>
+            <input type="text" placeholder="Last name" />
+          </div>
+
+          <div class="input full">
+            <label>Mobile number or email</label>
+            <input type="text" placeholder="Email or mobile number" />
+          </div>
+
+          <div class="input full">
+            <label>New password</label>
+            <input type="password" placeholder="New password" />
+          </div>
+
+          <div class="input">
+            <label>Birthday</label>
+            <select><option>January</option><option>February</option><option>March</option></select>
+          </div>
+          <div class="input">
+            <label>Gender</label>
+            <select><option>Female</option><option>Male</option><option>Custom</option></select>
+          </div>
+
+          <div class="input full cta">
+            <button class="btn-primary" type="submit">Sign Up</button>
+          </div>
+        </form>
+      </section>
+    </div>
+  </main>
+
+  <!-- DASHBOARD PAGE -->
+  <main class="page" id="dashboard" style="display:none">
+    <div class="dash-wrap">
+      <aside class="sidebar">
+        <div class="profile" style="margin-bottom:12px">
+          <div class="avatar">H</div>
+          <div>
+            <div style="font-weight:700">Hassan</div>
+            <div class="muted" style="font-size:13px">View profile</div>
+          </div>
+        </div>
+        <nav>
+          <div class="nav-item">Home</div>
+          <div class="nav-item">Friends</div>
+          <div class="nav-item">Watch</div>
+          <div class="nav-item">Marketplace</div>
+          <div class="nav-item">Groups</div>
+        </nav>
+      </aside>
+
+      <section>
+        <div class="topbar">
+          <div style="display:flex;align-items:center;gap:14px">
+            <strong>facebook</strong>
+            <div class="search"><input placeholder="Search Facebook" /></div>
+          </div>
+          <div style="display:flex;align-items:center;gap:12px">
+            <div class="muted">Notifications</div>
+            <div class="profile"><div class="avatar">H</div></div>
+          </div>
+        </div>
+
+        <div style="margin-top:16px;display:grid;gap:12px">
+          <div class="compose card">
+            <div style="display:flex;gap:12px;align-items:flex-start">
+              <div class="avatar">H</div>
+              <div style="flex:1">
+                <textarea placeholder="What's on your mind?"></textarea>
+                <div style="display:flex;gap:8px;margin-top:8px">
+                  <button class="btn-ghost">Photo</button>
+                  <button class="btn-ghost">Check in</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <article class="post">
+            <div style="display:flex;gap:10px;align-items:center;margin-bottom:8px">
+              <div class="avatar">R</div>
+              <div>
+                <div style="font-weight:700">RAZA </div>
+                <div class="muted">2 hrs</div>
+              </div>
+            </div>
+            <p>I AM DOING GYM TODAY.</p>
+            <div style="display:flex;gap:12px;color:var(--muted);font-weight:600">
+              <span>Like</span><span>Comment</span><span>Share</span>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <aside class="rightbar">
+        <h4>Stories & Friends</h4>
+        <div class="friend"><div class="avatar">R</div><div>rizwan</div></div>
+        <div class="friend"><div class="avatar">S</div><div>saad</div></div>
+        <div class="friend"><div class="avatar">R</div><div>Raza</div></div>
+      </aside>
+    </div>
+    <div style="margin-top:20px;text-align:center">
+      <button class="btn-ghost" onclick="document.getElementById('dashboard').style.display='none';document.getElementById('signup').style.display='block';">Logout / Back to Signup</button>
+    </div>
+  </main>
+
+</body>
+</html>
