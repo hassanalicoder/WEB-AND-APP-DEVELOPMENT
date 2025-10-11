@@ -1,0 +1,103 @@
+*{
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+    
+}
+.navbar{
+    background-color: #212529;
+    width: 100%;
+    height: 90px;
+}
+.logo{
+    padding-left: 45px;
+}
+.navlink>a{
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 16px inter;
+   padding: 17px 36px 0px 0px;
+   /* padding-right: 250px; */
+    
+}
+.btn{
+    font-size: 14px inter;
+    border: 1px solid;
+}
+.franchise{
+    border-radius: 10px;
+    background-color: #212529;
+    color: #ffffff;
+}
+.online{
+    border-radius: 10px;
+    background-color:red ;
+    color: #ffffff;
+}
+.prodect-brand{
+    background-color: #212529;
+    width: 100%;
+    height: 533px;
+    padding: 70px 15px;
+    font: 16px inter;
+    align-items: center;
+    justify-content: center;
+}
+h2{
+    font-size: 40px Apercu;
+    color: #ffffff;
+    margin: 0 0 8px;
+    /* background-color: #212529;
+    width: 100%; */
+}
+.logo-hold{
+    font-size: 63px;
+  
+}
+p{
+    color: #ffffffb3;
+}
+.track{
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+.lazy1{
+    background-color: #ffffff;
+    border-radius: 10px ;
+    
+}
+button{
+    height: 50px;
+    width: 174px;
+    background-color:#212529;
+    color: #ffffff;
+     border-radius: 15px ;
+     margin-top: 10px;
+}
+.franchise-section1{
+    background-color:#212529;
+}
+.location{
+    padding-left: 20px;
+    display: flex;
+    flex-direction: column;
+}
+small{
+    color: #ed1c24;
+    padding-left: 20px;
+}
+h3
+{
+ color: #ffffff;
+ padding-left: 20px;   
+}
+p{
+    padding-left: 20px;
+}
+img{
+    display: flex;
+}
+.first>img{
+    display: flex;
+}
